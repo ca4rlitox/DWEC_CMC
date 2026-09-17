@@ -6,16 +6,23 @@
     <title>Página Web Básica</title>
     <!-- Vinculación del archivo CSS externo -->
     <link rel="stylesheet" href="style.css">
+    <!-- Vinculación del archivo JavaScript -->
+    <script src="main.js" defer></script> <!-- Importante el defer para que el script se ejecute después de cargar el HTML -->
 </head>
 <body>
 
-    <h1 id="titulo">¡Hola, xoxo!</h1>
+    <h1 id="titulo">¡Hola, Carlos!</h1>
     <p>Esta es una página web básica con HTML, CSS y JavaScript.</p>
     
     <!-- Botón que activará la función de JavaScript -->
     <button id="miBoton">Haz clic aquí</button>
 
-    <!-- Vinculación del archivo JavaScript -->
-    <script src="main.js"></script>
+    <p id="manera1">hola mundo</p> <!-- manera 1 -->
+    <script>alert("Hola Mundo");</script> <!-- manera 2-->
+
+    <script type="text/javascript"> 
+    alert("Hola Mundo");
+    </script> <!-- manera 3 -->
+
 </body>
 </html>

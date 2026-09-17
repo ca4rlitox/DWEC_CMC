@@ -24,3 +24,6 @@ let empleados = [
     { "nombre": 'Carlos', "edad": 25, "puesto": 'Diseñador' },
     { "nombre": 'Diana', "edad": 28, "puesto": 'Analista' }
 ];
+
+let manera1 = document.getElementById('manera1');
+manera1.innerHTML = "Hola mundo!"

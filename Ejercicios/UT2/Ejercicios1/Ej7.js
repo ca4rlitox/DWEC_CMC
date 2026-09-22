@@ -1,9 +1,9 @@
 let numero = parseInt(prompt("Introduce un número entero: "))
 
-for (let i = 0; i < numero; i++) {
-    let numeroActual = i
+for (let i = 1; i < numero + 1; i++) {
+    let hola = ""
     for (let j = 0; j < i; j++) {
-        console.log("*")
+        hola+="*"
     }
-    console.log("\n")
+    console.log(hola)
 }

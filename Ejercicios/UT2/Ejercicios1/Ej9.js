@@ -1,6 +1,15 @@
+//funcion normal
 function perimetroRectangulo(a,b) {
-    aFloat = parseFloat(a);
-    bFloat = parseFloat(b);
     return 2*(a+b)
 }
-perimetroRectangulo(11.50,2.00)
+//funcion anonima
+
+let perimetroAnonimo = function (a,b) {
+    return 2*(a+b)
+}
+
+//funcion flecha con dos parámetros
+let perimetroFlecha = (a,b) => 2*(a+b)
+
+//funcion flecha con un parametro
+let doblar = (num) => 2*num

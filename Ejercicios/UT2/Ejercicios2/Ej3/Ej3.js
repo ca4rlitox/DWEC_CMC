@@ -2,49 +2,31 @@
 // Si lo acierta, finaliza el juego. Si no, le pregunta si es mayor o menor y vuelve a preguntar. Si se cancela cualquier cuadro, se finaliza indicando cancelado.
 // Si ha finalizado correctamente, se indica el número de intentos que han pasado.
 
-let numIntentos = 0
-
 let Adivino = () => {
-    //Comienzo del juego, aquí se comprueba si el número esta fuera de rango
-    let numIntroducido = prompt("Indica un número para empezar del 1 al 100")
-    //Comprobamos si es un número, en caso contrario se indica que lo ha acertado
-    if (isNaN(numIntroducido)){
-        alert("Has acertado")
-    }
-    //Comprobamos que el número esté dentro del rango.
-    if (numIntroducido < 1 || numIntroducido > 100) {
-        //Si no está dentro del rango, se indica por un alert y entra en un bucle while hasta que se introduzca un número entre el 1 y el 100.
-        alert("Numero fuera de rango.")
-        while (numIntroducido < 1 || numIntroducido > 100) {
-            numIntroducido = prompt("Indica un número para empezar del 1 al 100")
-                if (numIntroducido < 1 || numIntroducido > 100) {
-                alert("Numero fuera de rango.")
-                }
-                //Comprobamos si es un número, en caso contrario se indica que lo ha acertado
-                if (isNaN(numIntroducido)) {
-                    alert("Has acertado")
-                    break
-                }
-        }
-    }
-    //Aqui empieza el juego ya con el número chequeado.
-
-    let numAle = Math.random()*100
-    numAle = parseInt(numAle)
-    console.log(numAle)
-    
-    let pregunta = confirm(`¿Tu número es el ${numAle}?`)
-    if (!pregunta) {
-        let menor = 100
-        let mayor = 0
-        pregunta = prompt("Es mayor o menor?").toLowerCase
-        if (pregunta === mayor) {
-            
-        }
-    } else {
-        alert(`Lo adiviné! Es el ${numAle} y tu me dijiste el ${numIntroducido}`)
-    }
-    
-    
-
+    let continuar = false
+    do {
+        let numIntentos = 0
+        let numAle = parseInt(Math.random()*100)+1
+        let acertado = false
+    do {
+        console.log(numAle)
+        numIntroducido = prompt("Indica un número para empezar del 1 al 100")
+        numIntentos+=1
+            if (isNaN(numIntroducido) || numIntroducido === null) {
+                alert("No tengo tiempo...")
+                break
+            } else if (numIntroducido < 1 || numIntroducido > 100) {
+            alert("Numero fuera de rango.")
+            numIntentos-=1
+            } else if (numIntroducido < numAle) {
+                alert("El número es mayor")
+            } else if (numIntroducido > numAle) {
+                alert("El número es menor")
+            } else {
+                alert(`Has acertado el número! Era el ${numAle} y has tardado ${numIntentos} intentos en adivinarlo.`)
+                acertado=true
+            }
+        } while (!acertado || numIntroducido === null)
+            continuar = confirm("¿Quieres continuar?")
+        } while (continuar)
 }
